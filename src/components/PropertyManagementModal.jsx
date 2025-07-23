@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Home, DollarSign, Plus, Minus, AlertTriangle, Building } from 'lucide-react';
-import { BOARD_POSITIONS } from '../../data/game/gameData';
+import { BOARD_POSITIONS } from '../data/gameData';
 
 const PropertyManagementModal = ({ 
   gameState, 
