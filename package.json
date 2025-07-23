@@ -1,0 +1,42 @@
+{
+  "name": "business-board-game",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "An online multiplayer business board game (RichUP Clone) with P2P networking",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"vite\"",
+    "server": "node server.cjs",
+    "client": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "react-hot-toast": "^2.4.0",
+    "simple-peer": "^9.11.1",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "concurrently": "^8.2.2",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "util": "^0.12.5",
+    "vite": "^4.1.0"
+  },
+  "keywords": ["game", "board-game", "multiplayer", "p2p", "react", "websocket"],
+  "author": "Nikhil",
+  "license": "MIT"
+} 
