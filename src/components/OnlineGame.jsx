@@ -4,8 +4,8 @@ import ConnectionScreen from './ConnectionScreen.jsx';
 import GameBoard from './GameBoard.jsx';
 import { INITIAL_GAME_STATE, GAME_CONSTANTS } from '../data/gameData';
 import { Toaster } from 'react-hot-toast';
-import './App.css';
-import './game-index.css';
+import '../components/App.css';
+import '../components/game-index.css';
 
 function OnlineGame() {
   const [localGameState, setLocalGameState] = useState({
