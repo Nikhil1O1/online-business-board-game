@@ -19,9 +19,6 @@ const Property = ({ position, property, isOwned, owner, playersHere, onClick, cu
   const getPropertyStyle = () => {
     let style = {
       backgroundColor: 'white',
-      borderWidth: '2px',
-      borderStyle: 'solid',
-      borderColor: '#34495e',
       borderRadius: '4px',
       display: 'flex',
       flexDirection: 'column',
@@ -37,16 +34,20 @@ const Property = ({ position, property, isOwned, owner, playersHere, onClick, cu
       minHeight: '50px'
     };
 
+    // Property color strip for regular properties
+    if (property.color && property.type === 'property') {
+      style.border = '2px solid #34495e';
+      style.borderTop = `8px solid ${property.color}`;
+    } else {
+      // Default border for non-property types
+      style.border = '2px solid #34495e';
+    }
+
     // Corner properties
     if (property.type === 'corner') {
       style.backgroundColor = '#3498db';
       style.color = 'white';
       style.fontSize = '10px';
-    }
-    
-    // Property color strip
-    if (property.color && property.type === 'property') {
-      style.borderTop = `8px solid ${property.color}`;
     }
     
     // Railroad properties

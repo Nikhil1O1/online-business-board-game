@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useWebSocketP2PConnection } from '../hooks/useWebSocketP2PConnection';
 import ConnectionScreen from './ConnectionScreen.jsx';
 import GameBoard from './GameBoard.jsx';
+import ErrorBoundary from './ErrorBoundary.jsx';
 import { INITIAL_GAME_STATE, GAME_CONSTANTS } from '../data/gameData';
 import { Toaster } from 'react-hot-toast';
 import '../components/App.css';
@@ -401,12 +402,12 @@ function OnlineGame() {
   };
 
   return (
-    <div className="online-game-wrapper">
-
-      
-      {renderCurrentScreen()}
-      <Toaster position="top-right" />
-    </div>
+    <ErrorBoundary>
+      <div className="online-game-wrapper">
+        {renderCurrentScreen()}
+        <Toaster position="top-right" />
+      </div>
+    </ErrorBoundary>
   );
 }
 

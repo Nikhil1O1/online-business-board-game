@@ -93,7 +93,13 @@ const GameBoard = ({ gameState, playerId, isHost, onGameAction, connectionStatus
       }, 1000); // Delay to let movement animation complete
     } else if (isOwned && gameState.players.find(p => p.id === isOwned.owner)?.id !== currentPlayer.id) {
       const owner = gameState.players.find(p => p.id === isOwned.owner);
-      toast.warning(`You landed on ${owner?.name}'s property! Pay rent.`);
+      toast(`You landed on ${owner?.name}'s property! Pay rent.`, {
+        icon: '⚠️',
+        style: {
+          background: '#f59e0b',
+          color: '#fff'
+        }
+      });
       // TODO: Implement rent payment
     }
   }, [isMyTurn, gameState, currentPlayer]);
